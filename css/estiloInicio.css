@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c36;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+h1 {
+    font-size: 2.5em;
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+h2, h3 {
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+#guia {
+    color: #3498db;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 300ms;
+}
+#guia:hover {
+    color: #2980b9;
+    transform: scale(1.1);
+}
+div {
+    margin-top: 20px;
+}
+a {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+a:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+<body>
+    <h1 id="titulo">BINGO</h1>
+
+    <div id="menuInicial">
+        
+            <div id="modoDeJuego">
+
+                <h3>Selecciona el modo de juego: </h3>
+
+                <select id="selectorJugadores">
+                    <option value="1">Jugados vs máquina</option>
+                    <option value="2">Jugador vs Jugador</option>
+                </select>
+            </div>
+            
+            <div id="contSelectCartJug1">
+
+                <h3>Numero de cartones de jugador1</h3>
+
+                <select type="number" id="selectCartonesJugador1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            
+            <div id="contSelectCartJug2">
+
+                <h3>Numero de cartones de jugador2</h3>
+
+                <select type="number" id="selectCartonesJugador2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <div id="automarcarCartones">
+
+                <h3>Quieres que se automarquen los cartones?</h3>
+                <input id="checkAutomarcar" type="checkbox">
+
+            </div>
+
+            <div id="botonJugar" onclick="empezarJuego()"><h1>Empezar a jugar</h1></div>
+
+    </div>
+
+
+    <div id="contJuego">
+        <div id="contenedorCartonesJugadores">
+            <div class="cartonesJugador" id="cartonesJugador1"></div>
+            <div id="numActual" onclick="siguienteNumero()"><h1 id="numero">0</h1></div>
+            <div class="cartonesJugador" id="cartonesJugador2"></div>
+        </div>
+        <div id="contNumeros"></div>
+    </div>
+
+
+
+    <script src="js/clase.js"></script>
+    <script src="js/juego.js"></script>
+
+</body>
+</html>
