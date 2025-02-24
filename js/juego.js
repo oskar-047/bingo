@@ -21,16 +21,16 @@ let automarcarElemento = document.getElementById("checkAutomarcar");
 
 //Se crea un array con todos los cartones, solo se crea el array, los cartones no estan iniciados creados aún
 let cartones = [
-    new carton(1, 1, 0),
-    new carton(2, 1, 1),
-    new carton(3, 1, 2),
-    new carton(4, 1, 3),
-    new carton(5, 1, 4),
-    new carton(1, 2, 5),
-    new carton(2, 2, 6),
-    new carton(3, 2, 7),
-    new carton(4, 2, 8),
-    new carton(5, 2, 9)
+    new Carton(1, 1, 0),
+    new Carton(2, 1, 1),
+    new Carton(3, 1, 2),
+    new Carton(4, 1, 3),
+    new Carton(5, 1, 4),
+    new Carton(1, 2, 5),
+    new Carton(2, 2, 6),
+    new Carton(3, 2, 7),
+    new Carton(4, 2, 8),
+    new Carton(5, 2, 9)
 ];
 
 let victoria = false;
@@ -41,6 +41,9 @@ let numerosQueHanSalido = new Array();
 
 let opcionSeleccionada;
 
+function test(){
+    cartones[0].ordenarCarton();
+}
 
 function empezarJuego(){
     
@@ -203,4 +206,4 @@ setInterval(() => {
         document.getElementById("contSelectCartJug2").style.display = "inherit";
     }
 
-}, 500);
+}, 50);

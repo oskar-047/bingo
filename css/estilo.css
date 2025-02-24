@@ -134,17 +134,35 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
     position: absolute;
-    clip-path: circle(50% at 50% 50%);
-    background-color: yellow;
-    font-size: 30px;
-    height: 200px;
-    width: 200px;
-    top: 210px;
-    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #fff 20%, #ffcc00 80%);
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8), 0 0 30px rgba(255, 204, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    top: 240px;
+    left: 47.5%;
     transform: translate(-50%, 0%);
+    transform: scale(1);
     user-select: none;
     cursor: pointer;
 }
+
+#numActual:hover {
+    box-shadow: 0 0 20px rgba(255, 204, 0, 1), 0 0 40px rgba(255, 204, 0, 0.7);
+  }
+  
+
+  /* active es cuando se mantiene pulsada la d */
+#numActual:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.6), 0 0 20px rgba(255, 204, 0, 0.4);
+  }
 
 /* ----------- ESTILO DEL CONTENEDOR DE LOS CARTONES DE CADA JUGADOR */
 .cartonesJugador{
@@ -248,5 +266,16 @@ input[type="checkbox"] {
     width: 100%;
 }
 
+#contVolverJugar{
+    font-size: 40px;
+    color: orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+#contVolverJugar > a{
+    color: orange;
+}
 

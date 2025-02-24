@@ -1,11 +1,12 @@
 //Se crea una clase llamado carton, aqui se gestionará toda la lógica de cada cartón individual
-class carton {
+class Carton {
 
     constructor(id, jugador, varID){
         this.id = id;
         this.jugador = jugador;
         this.varID = varID;
         this.automarcar = false;
+        this.ordenarNum = new Array();
 
         //Array donde se indicará el estado de cada casilla
         this.casillas = [
@@ -83,8 +84,10 @@ class carton {
                 }
 
                 j++;
-            }
+            }   
         }
+
+        this.ordenarCarton();
 
 
         // --------------- LOGICA PARA LA CREACIÓN DE LOS CORRESPONDIENTES ELEMENTOS EN EL DOM --------------------
@@ -132,6 +135,31 @@ class carton {
 
         //console.log("columnas: " + columnas);
         //console.table(this.casillas);
+    }
+
+    ordenarCarton(){
+        for(let i=0; i<9; i++){
+            for(let k=0; k<3; k++){
+                if (this.casillas[k][i] != 100){
+                    this.ordenarNum.push(this.casillas[k][i]);
+                } 
+            }
+        }
+
+        this.ordenarNum.sort((a, b) => a - b);
+
+        let j = 0;
+
+        for(let i=0; i<9; i++){
+            for(let k=0; k<3; k++){
+                if (this.casillas[k][i] != 100){
+                    this.casillas[k][i] = this.ordenarNum[j];
+                    j++;
+                } 
+            }
+        }
+
+        console.table(this.ordenarNum);
     }
 
     //Método que se activa al clicar una casilla
@@ -183,8 +211,10 @@ class carton {
                 textoVolverJugar.innerHTML = "Volver a jugar otra partida";
                 textoVolverJugar.href = "inicio.html";
 
-                document.getElementById("contJuego").appendChild(contVolverJugar);
+                document.getElementById("win").appendChild(contVolverJugar);
                 contVolverJugar.appendChild(textoVolverJugar);
+
+                document.getElementById("contJuego").style.display = 'none';
             }, 10);   
         }        
     }
